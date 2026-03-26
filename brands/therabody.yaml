@@ -1,0 +1,23 @@
+# Therabody brand configuration example
+
+name: Therabody
+
+colors:
+  primary: "#000000"
+  accent: "#F5A37F"
+  background: "#D1D3CD"
+  text_light: "#FFFFFF"
+  text_dark: "#2D2D2D"
+
+fonts:
+  heading: "TT Norms Medium"
+  body: "TT Norms Regular"
+
+tone: "restrained, premium, resonant"
+
+logo: null       # Set to your logo path, e.g.: ./assets/therabody-logo.png
+template: null   # Set to your brand template, e.g.: ./template.pptx
+
+ai:
+  backend: "claude"
+  api_key: ""    # Set via ANTHROPIC_API_KEY env var or paste here

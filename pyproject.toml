@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "brand-deck"
+version = "0.1.0"
+description = "AI-powered marketing PPT generator — turn any content into brand-compliant PPTX"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Joyce Sun"},
+]
+keywords = ["pptx", "marketing", "ai", "brand", "presentation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business",
+]
+dependencies = [
+    "python-pptx>=0.6.21",
+    "pyyaml>=6.0",
+    "click>=8.0",
+    "Pillow>=9.0",
+    "anthropic>=0.30.0",
+    "google-genai>=0.5.0",
+    "jsonschema>=4.0",
+    "python-docx>=0.8.11",
+    "pdfplumber>=0.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov",
+    "ruff",
+]
+
+[project.scripts]
+brand-deck = "brand_deck.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/joycesun/brand-deck"
+Repository = "https://github.com/joycesun/brand-deck"
+Issues = "https://github.com/joycesun/brand-deck/issues"
+
+[tool.ruff]
+line-length = 100

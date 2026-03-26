@@ -1,0 +1,26 @@
+# Brand configuration template
+# Copy this file as brand.yaml and fill in your brand details.
+
+name: MyBrand
+
+colors:
+  primary: "#000000"       # Main brand color (used for headers, dark backgrounds)
+  accent: "#FF6600"        # Accent color (used for highlights, CTAs, decorative elements)
+  background: "#FFFFFF"    # Default slide background
+  text_light: "#FFFFFF"    # Text color on dark backgrounds
+  text_dark: "#333333"     # Text color on light backgrounds
+
+fonts:
+  heading: "Arial"         # Font for titles and headings
+  body: "Arial"            # Font for body text
+
+tone: "professional"       # Brand tone: professional, bold, warm, playful, minimal, etc.
+
+# Optional
+logo: null                 # Path to logo file (PNG recommended)
+template: null             # Path to brand .pptx template (for slide master reference)
+
+ai:
+  backend: "claude"        # AI service: claude, gemini
+  api_key: ""              # Your API key (or set via ANTHROPIC_API_KEY / GOOGLE_API_KEY env var)
+  # base_url: null         # Custom API base URL (for proxies or alternative endpoints)
