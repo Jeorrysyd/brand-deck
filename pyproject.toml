@@ -46,9 +46,9 @@ dev = [
 brand-deck = "brand_deck.cli:cli"
 
 [project.urls]
-Homepage = "https://github.com/joycesun/brand-deck"
-Repository = "https://github.com/joycesun/brand-deck"
-Issues = "https://github.com/joycesun/brand-deck/issues"
+Homepage = "https://github.com/Jeorrysyd/brand-deck"
+Repository = "https://github.com/Jeorrysyd/brand-deck"
+Issues = "https://github.com/Jeorrysyd/brand-deck/issues"
 
 [tool.ruff]
 line-length = 100
