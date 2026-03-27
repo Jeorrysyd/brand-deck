@@ -37,6 +37,43 @@ Users don't need to know JSON, pick templates, or learn layout design. They just
 
 ---
 
+## Two Usage Modes
+
+### 🤖 Agent Mode — No API Key Needed (Recommended)
+
+Use BrandDeck inside **Claude Code**, **Floatboat**, **Cursor**, or any AI agent with a subscription. The agent generates the slide structure; BrandDeck handles the rendering.
+
+```bash
+# Step 1: Set up brand (skip API key)
+brand-deck init --agent
+
+# Step 2: Ask your agent to generate slides JSON, then render:
+brand-deck render slides.json
+
+# Or pipe JSON directly from agent output:
+brand-deck render '{"slides": [{"type": "cover", "title": "My Deck"}, ...]}'
+
+# See the JSON schema:
+brand-deck schema
+```
+
+**In Claude Code / Floatboat**, just say:
+```
+"Turn this brief into a PPT using brand-deck"
+→ Agent reads files → generates slide JSON → calls brand-deck render → opens .pptx
+```
+
+### 🔑 Standalone Mode — With API Key
+
+Use BrandDeck as a standalone CLI with your own Claude/Gemini API key.
+
+```bash
+brand-deck init       # set up brand + API key
+brand-deck make "Turn this shooting script into a storyboard PPT" --attach script.docx
+```
+
+---
+
 ## Core Philosophy
 
 **"Any marketing content → Brand PPT"**
@@ -303,6 +340,43 @@ MIT — see [LICENSE](LICENSE) for details.
 1. 🎨 一次性配好品牌信息（色板、字体、Logo）
 2. 📎 把素材丢给它（文字、图片、PDF、Word、链接…任何形式）
 3. 💬 说一句「帮我做成 PPT」
+
+---
+
+## 两种使用方式
+
+### 🤖 Agent 模式 — 无需 API Key（推荐）
+
+在 **Claude Code**、**Floatboat**、**Cursor** 等 AI Agent 中使用。Agent 负责生成幻灯片结构，BrandDeck 只负责渲染 PPTX。
+
+```bash
+# 第一步：初始化品牌（跳过 API Key）
+brand-deck init --agent
+
+# 第二步：让 Agent 生成 JSON，然后渲染：
+brand-deck render slides.json
+
+# 或者直接管道传入 JSON：
+brand-deck render '{"slides": [{"type": "cover", "title": "我的PPT"}, ...]}'
+
+# 查看 JSON Schema：
+brand-deck schema
+```
+
+**在 Claude Code / Floatboat 里**，直接说：
+```
+「把这个 brief 做成 PPT，用 brand-deck 渲染」
+→ Agent 读取文件 → 生成 slides JSON → 调用 brand-deck render → 打开 .pptx
+```
+
+### 🔑 独立模式 — 配置 API Key
+
+用你自己的 Claude/Gemini API Key，brand-deck 独立调用 AI。
+
+```bash
+brand-deck init       # 配置品牌 + API Key
+brand-deck make "把这个拍摄脚本做成分镜PPT" --attach script.docx
+```
 
 ---
 

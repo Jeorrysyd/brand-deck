@@ -21,6 +21,43 @@
 
 ---
 
+## 两种使用方式
+
+### 🤖 Agent 模式 — 无需 API Key（推荐）
+
+在 **Claude Code**、**Floatboat**、**Cursor** 等 AI Agent 中使用。Agent 用订阅账号负责 AI 推理，BrandDeck 只负责渲染 PPTX，**你不需要配置任何 API Key**。
+
+```bash
+# 第一步：初始化品牌（跳过 API Key）
+brand-deck init --agent
+
+# 第二步：让 Agent 生成 JSON，然后渲染：
+brand-deck render slides.json
+
+# 或者直接传入 JSON 字符串：
+brand-deck render '{"slides": [{"type": "cover", "title": "我的PPT"}, ...]}'
+
+# 查看完整 JSON Schema（让 Agent 按格式输出）：
+brand-deck schema
+```
+
+**在 Floatboat / Claude Code 里直接说：**
+```
+「把这个 brief 做成 PPT，用 brand-deck 渲染」
+→ Agent 读取文件 → 生成 slides JSON → 调用 brand-deck render → 打开 .pptx
+```
+
+### 🔑 独立模式 — 配置 API Key
+
+用你自己的 Claude/Gemini API Key，brand-deck 独立调用 AI 生成内容。
+
+```bash
+brand-deck init           # 配置品牌 + API Key
+brand-deck make "把这个拍摄脚本做成分镜PPT" --attach script.docx
+```
+
+---
+
 ## 为什么做这个？
 
 每个营销人都经历过：
